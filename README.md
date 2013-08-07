@@ -59,9 +59,9 @@
      !     Valid versions: ruby-2.0.0, ruby-1.9.3, ruby-1.9.2, ruby-1.8.7, ruby-1.9.3-jruby-1.7.0, ruby-1.8.7-jruby-1.7.0, ruby-1.9.3-jruby-1.7.1, ruby-1.8.7-jruby-1.7.1, ruby-1.9.3-rbx-2.0.0dev, ruby-1.8.7-rbx-2.0.0dev
     ```
 
-    となった場合。
+    となった場合
     Gemfileに
-    `ruby '2.0.0'` のようにバージョン番号を明記してみてください。
+    `ruby '2.0.0'` のようにバージョン番号を明記してみる
 * `heroku run rake db:migrate` で Heroku 側の DB の schema も更新
 * Web ブラウザで http://myname-myfirstapp.herokuapp.com/items にアクセスしてみる (きっとローカルで見たのと同じ景色が)
 
