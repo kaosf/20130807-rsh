@@ -9,16 +9,16 @@
 * Git をインストールしてユーザ名とメールアドレスの設定，公開鍵の作成を終えておく
 * Ruby をインストールする (特に理由がなければ 2.0.0 の最新のもので)
 * Rails をインストールする
-  * `gem installl rails --no-ri --no-rdoc`
+    * `gem installl rails --no-ri --no-rdoc`
 * SQLite3 と PostgreSQL の開発用パッケージをインストールする
-  * `sudo apt-get install libsqlite3-dev postgresql-server-dev-9.1`
-    * `sudo apt-get install sqlite3` が必要だったかどうか忘れた (とりあえず入れておこう)
-  * ここ Mac の人はどうするんだっけか…
+    * `sudo apt-get install libsqlite3-dev postgresql-server-dev-9.1`
+        * `sudo apt-get install sqlite3` が必要だったかどうか忘れた (とりあえず入れておこう)
+    * ここ Mac の人はどうするんだっけか…
 * Rails アプリを作る
-  * `rails new myfirstapp`
+    * `rails new myfirstapp`
 * ※以下の作業工程を全て Git の commit として残しておくと後から復習しやすくて良いと思います
 * production 環境では PostgreSQL を使うようにする (※ガチでやるなら development も test も PostgreSQL に揃えるべし)
-  * `Gemfile` を以下のように書き換え
+    * `Gemfile` を以下のように書き換え
 
 ```diff
 -gem 'sqlite3'
@@ -32,21 +32,21 @@
 
 * `bundle install` で `Gemfile.lock` も更新
 * `rails g scaffold item name:string` をしてみる (アプリの機能の土台というか割と至れり築くせりな雛形作成)
-  * `item name:string` の部分はもし分かるなら自分で好きなようにしてみよう
+    * `item name:string` の部分はもし分かるなら自分で好きなようにしてみよう
 * `rake db:migrate` をしてみる (DB の schema を更新)
 * `rails server` ないし `rails s` でサーバとしてプログラムを走らせておいて Web ブラウザで http://localhost:3000/items にアクセスしてみる (きっと嬉しいことになってる)
-  * もういいやと思ったら C-c でプロセスを殺しましょう
+    * もういいやと思ったら C-c でプロセスを殺しましょう
 * Heroku のアカウント作成
 * Heroku Toolbelt をインストール
-  * [Heroku Toolbelt](https://toolbelt.heroku.com/)
+    * [Heroku Toolbelt](https://toolbelt.heroku.com/)
 * `heroku login` でログイン
-  * このとき公開鍵があるなら Heroku 側に送られる
-  * 後から公開鍵を作った場合は `heroku keys:add` で送ることが出来る
+    * このとき公開鍵があるなら Heroku 側に送られる
+    * 後から公開鍵を作った場合は `heroku keys:add` で送ることが出来る
 * `heroku apps:create myname-myfirstapp` 等として Heroku にアプリの土台となる環境を作成
-  * `myname-` みたいな prefix を付けておくのはバッティングを防止するため (ダブらない自信があるなら何でもいい)
-  * アプリ名を省略すると Heroku 側で勝手に適当な (本当に適当なので注意) 名前を付けてもらえる (後から rename も一応出来る)
-  * Git のリポジトリとして Rails のプロジェクトが管理されているならこの時点で remote repository に heroku が登録される
-  * 後からリモートリポジトリを追加する場合は URL を `git@heroku.com:myname-myfirstapp.git` とする
+    * `myname-` みたいな prefix を付けておくのはバッティングを防止するため (ダブらない自信があるなら何でもいい)
+    * アプリ名を省略すると Heroku 側で勝手に適当な (本当に適当なので注意) 名前を付けてもらえる (後から rename も一応出来る)
+    * Git のリポジトリとして Rails のプロジェクトが管理されているならこの時点で remote repository に heroku が登録される
+    * 後からリモートリポジトリを追加する場合は URL を `git@heroku.com:myname-myfirstapp.git` とする
 * `git push heroku master` で deploy
 * `heroku run rake db:migrate` で Heroku 側の DB の schema も更新
 * Web ブラウザで http://myname-myfirstapp.herokuapp.com/items にアクセスしてみる (きっとローカルで見たのと同じ景色が)
