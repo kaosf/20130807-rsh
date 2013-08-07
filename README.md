@@ -1,5 +1,7 @@
 # 2013-08-07 Rails で scaffold な Heroku 勉強会 in 徳島 成果物
 
+[RailsでscaffoldなHeroku勉強会 in 徳島](http://devlove-459.doorkeeper.jp/events/5207) [RailsでscaffoldなHeroku勉強会 in 松山](http://devlove-459.doorkeeper.jp/events/5191) で作ったものです．
+
 以下に記す手順を踏んで作られたものがこのリポジトリそのものであると考えてくれていい．
 
 `myfirstapp` や `myname` と言ったものは適宜置き換え，読み替えをされたし．
